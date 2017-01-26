@@ -2,27 +2,31 @@ package luciano.cursojava.caelun.fj11.cap03;
 
 public class Exercicio6 {
 	
-			public static void main (String[] args) {
-				
-				int maxFibonacci = 40;
-				for(int i = 1; i <=maxFibonacci;i++){
-					System.out.println("(" + i + ") : " + fib(i));
-				}						
-					
-			}
-			
-			//abordagem recursiva do fibonacci
-			//if normal
-			static long fib(long n){
-				if (n < 2){
-					return n;
-				} else {
-					return fib(n - 1) + fib(n - 2);
-				}
-			}
-			
-			//if ternario
-			static long fibonacci(long n){
-				return (n < 2) ? n : fib(n - 1) + fib(n - 2);
-			}
+	public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Entre com o n-ésimo termo da série de fibonacci:");
+        int n = scan.nextInt();
+        
+        int primeiro = 1;
+        int segundo = 1;
+        int proximo;
+        
+        System.out.println(primeiro);
+        System.out.println(segundo);
+        
+        //1,1,2,3,5
+        //primeiro = 1
+        //segundo = 2
+        //proximo = 3
+        
+        for (int i=3; i<=n; i++){
+            
+            proximo = primeiro + segundo;
+            primeiro = segundo;
+            segundo = proximo;
+            
+            System.out.println(proximo);
+        }
+    }
 }
